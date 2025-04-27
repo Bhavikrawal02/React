@@ -1,12 +1,48 @@
-# React + Vite
+Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+vite app-> there are different javascript files this is a bundler that combine all the file and give it to us
 
-Currently, two official plugins are available:
+npm -> node pacakage manager 
+npx -> node package execute-> used to tun any package 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+to create a project 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+npx creater-react-app name_of_project
+
+this is very slow->it is very bulky 
+
+package.json-> imp, dependency
+scripts ->used to run this project 
+start, build->production, test,eject
+
+
+
+npm run build -> gives a new build folder used for production and deploy
+
+vite bundler: npm create vite@latest to create a project
+
+note: make sure you are in right folder 
+use ls to check paclage .json is there or not else mpove to correct folder and run npm i 
+
+npm run dev tp start project
+
+
+flow of react  vite app
+
+index.html is out main html file in which we have a div element and a script -> js file 
+
+main.jsk is out js file linked in index.html and in main.jsk we are creating a dom and just rendering it in dom elemtn we have a html element 
+
+main .jsk is rendering an app.jsk 
+
+app.jsk is a file which contain a fucntion that contain html adn we are returning the html 
+
+
+* make sure *-> if we create our own component we need to have first letter as upper case and name shoul be .jsx not js 
+
+
+we cannot return multiple html ele in hence we use fragmant to wrap multiple html elements
+
+
+
