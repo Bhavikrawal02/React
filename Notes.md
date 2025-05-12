@@ -335,8 +335,45 @@ const Card=(tprops)=>{
         <>
         </>
     )
-
 }
+
+
+***React interview follow up of counter quesdtion  ***
+
+ const [count, setCount] = useState(0)
+  function increase(){
+    // setCount(count+1);
+    setCount(count+1);
+    setCount(count+1);
+    setCount(count+1);
+
+    // what happen?
+    // counter will increase by one only  because this all happens in batch like system.. if we want to do this we can use callback 
+    
+
+    // both below are same 
+    // setCount((prevCounter)=>prevCounter+1);
+    // setCount((Counter)=> Counter+1)
+
+
+    //  setCount((prevCounter)=>prevCounter+1);
+    //  setCount((prevCounter)=>prevCounter+1);
+    //  setCount((prevCounter)=>prevCounter+1);
+    //  setCount((prevCounter)=>prevCounter+1);
+    //  setCount((prevCounter)=>prevCounter+1);
+    //  setCount((prevCounter)=>prevCounter+1);
+  
+
+  }
+  function decrease(){
+    setCount(count-1);
+  }
+
+  ***OnClick**
+  on click  function needs the function not a value 
+  hence when we use onclick we should give a reference as if we use "setcolor()" it will call the function 
+
+  now if we want to pass the parameter use onClick={()=> setColot('Red)}
 
 
 
