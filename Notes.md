@@ -265,6 +265,82 @@ useState is a React hook that allow functionanl component to have state-> state 
 
 
 
+*********VIRTUAL DOM**********
+
+NOW VIRTUAL DOM IS NO LONGER USED IN REACT
+
+Article-> 
+createRoot method in main.jsx -> this create a complete virtual dom same as browser dom
+
+virtual dom compare itself with the main dom and only updates those changes that are done in ui of virtual dom 
+while browser remove whole dom and create new dom with updates that is page reloading thats why page reload 
+
+***reconciliation***
+this is the algorithm that uses to differentiaite one tree form anopther to determine which parts need to be chnaged 
+
+compare virtual dom and browser dom 
+
+which part to changed 
+
+**update**
+a change in the data used to render a react app usually the result of setState 
+
+******React Fibre******
+https://github.com/acdlite/react-fiber-architecture
+
+React Fiber is an implementation of React's core algorithm.
+
+ key features include the ability to pause, abort, or reuse work as new updates come in; the ability to assign priority to different types of updates; and new concurrency primitives.
+
+
+Reconciliation is the algorithm behind what is popularly understood as the "virtual DOM." A high-level description goes something like this: when you render a React application, a tree of nodes(jsx objects) that describes the app is generated and saved in memory. This tree is then flushed to the rendering environment — for example, in the case of a browser application, it's translated to a set of DOM operations. When the app is updated (usually via setState), a new tree is generated. The new tree is diffed with the previous tree to compute which operations are needed to update the rendered app.
+
+
+ Diffing of lists is performed using keys. Keys should be "stable, predictable, and unique."
+
+ key is used in iteration like in .map we use key 
+
+
+The key points are:
+
+In a UI, it's not necessary for every update to be applied immediately; in fact, doing so can be wasteful, causing frames to drop and degrading the user experience.
+
+Different types of updates have different priorities — an animation update needs to complete more quickly than, say, an update from a data store.
+
+A push-based approach requires the app (you, the programmer) to decide how to schedule work. A pull-based approach allows the framework (React) to be smart and make those decisions for you.
+
+
+
+********fiber*******
+pause work and come back to it later.
+assign priority to different types of work.
+reuse previously completed work.
+abort work if it's no longer needed.
+
+
+*********tailwind and props****
+
+each tag in tailwind is always closing || the img tag is not closing in normal but  in tailwind it is
+
+***props***
+
+props-> properties are a way to pass data from parent component to child component 
+they makes componenet resuable 
+
+how to use props 
+<Card title='bhavik' /> 
+use this in component 
+const Card=(tprops)=>{
+    return (
+        <>
+        </>
+    )
+
+}
+
+
+
+
 
 
 
