@@ -375,6 +375,86 @@ const Card=(tprops)=>{
 
   now if we want to pass the parameter use onClick={()=> setColot('Red)}
 
+**useCallback hook**
+
+useCallBack hook is used to memoize or cache a function definition across rerender
+
+syntax= const pass gen= useCallback(()=>{},[]arry of dependencies)
+
+****useEffect hook****
+
+The useEffect in ReactJS is used to handle the side effects such as fetching data and updating DOM. This hook runs on every render but there is also a way of using a dependency array using which we can control the effect of rendering.
+
+syntax
+useEffect(()=>{
+
+},[])
+
+**useref**
+
+The useRef Hook allows you to persist values between renders.
+
+It can be used to store a mutable value that does not cause a re-render when updated.
+
+It can be used to access a DOM element directly.
+
+syntax:
+
+const passref= useRef()
+
+ref={passref}-> in any html element
+
+
+**custom hooks** 
+create a file in folder hooks and  create a file in it name as hookname.js
+
+create a function  and export it 
+
+
+**React Router**
+React router dom  is a react routing library for navigation between pages
+
+navigate between componensts and pages 
+handle multiple url in single page 
+pass data via router parameter
+
+
+
+link and navlink are provided in react-router dom 
+
+link -> alternatice for a tag ( a tag make the complete page get reloaded)
+
+Link and nav link both are used for navigation the main difference between them is that navlink has extra functionalities compare to link 
+nav link provide the option for the active state
+
+
+**outlet**
+it is a react-router-dom element that is used to display elements dyncamically it privide a way to make content fix while the outlet will chnage
+
+
+
+**Routing**
+in main.jsx in we are rendering app but for route we will use different 
+use RouteProvider for rendering -> take props of Router={Router}
+define router
+const router= CreaterBrowserRouter([
+
+])
+createBrowserRouter Takes and array and in array objects -> path element , children
+
+for dynamic use outlet
+
+**dynamic data**
+
+**UseParams**
+UseParams is a react router dom hooks that is used to access the paramnet from the url of the site 
+import UseParams from 'react-router-dom'
+
+const {userid} = UseParams()
+
+
+in routins <Route path:'user/:userid' element={<User/>} />
+
 
 
 
