@@ -79,6 +79,7 @@ function customRender(reactElement,container){
     // domele.setAttribute('href',reactElement.props.href)
     // domele.setAttribute('target',reactElement.props.target)
     // container.appendChild(domele)
+    
     const domele=document.createElement(reactElement.type)
     domele.innerHTML=reactElement.children
 
@@ -102,7 +103,7 @@ const ReactElement={
 
 render this react ele 
 const maincontainer= document.querySelector('#root')
-renderelement(reactElement, maincontainer)
+customrender(ReactElement, maincontainer)
 
 
 
@@ -320,7 +321,7 @@ abort work if it's no longer needed.
 
 *********tailwind and props****
 
-each tag in tailwind is always closing || the img tag is not closing in normal but  in tailwind it is
+each tag in tailwind is always closing || the img tag is not closing in normal but in tailwind it is
 
 ***props***
 
@@ -330,7 +331,7 @@ they makes componenet resuable
 how to use props 
 <Card title='bhavik' /> 
 use this in component 
-const Card=(tprops)=>{
+const Card=(props)=>{
     return (
         <>
         </>
@@ -404,6 +405,54 @@ const passref= useRef()
 
 ref={passref}-> in any html element
 
+ useref -> hookm
+
+// import React, { useRef, useState } from 'react';
+
+// function TimerCounter() {
+//   const count = useRef(0);
+//   const [render, setRender] = useState(0);
+
+//   const handleClick = () => {
+//     count.current += 1;
+//     console.log("Count (won't trigger re-render):", count.current);
+//   };
+
+//   return (
+//     <>
+//       <p>Click count (from console only): {count.current}</p>
+//       <button onClick={handleClick}>Click me</button>
+//       <button onClick={() => setRender(render + 1)}>Force Re-render</button>
+//     </>
+//   );
+// }
+
+// export default TimerCounter
+
+
+<!-- to access dom element -->
+
+
+import React, { useRef } from 'react';
+
+function InputFocus() {
+  const inputRef = useRef(null);
+
+  const handleClick = () => {
+    inputRef.current.focus();  // Directly accesses the DOM node
+  };
+
+  return (
+    <>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleClick}>Focus Input</button>
+    </>
+  );
+}
+
+export default InputFocus
+
+
 
 **custom hooks** 
 create a file in folder hooks and  create a file in it name as hookname.js
@@ -442,6 +491,14 @@ const router= CreaterBrowserRouter([
 ])
 createBrowserRouter Takes and array and in array objects -> path element , children
 
+Other method ->
+const router= CreateBrowserrouter(
+    CreateRouterElement(
+        <Route
+        loader = ()=>{},path='/',element=<Nvbar/> />
+    )
+)
+
 for dynamic use outlet
 
 **dynamic data**
@@ -454,6 +511,61 @@ const {userid} = UseParams()
 
 
 in routins <Route path:'user/:userid' element={<User/>} />
+
+
+***PROPS DRILLING***
+props drilling is the techinque of passing the props from the parent to nested child componenets
+problem we are passing the data to the component where it is not useful 
+
+app -> dashbaord-> right->top component-> card
+
+<!-- Solution -->
+1) context api
+2) redux -> react-redux
+3) redux toolkit ->rdk
+
+
+
+**Context Api**
+
+1) create a global context in a src-> component-> Context->Usercontext.js file -> 
+
+const userContext= React.createContext()
+export default Usercontext
+2) create context provider in another file UsercontextProvider.jsx
+
+import userContext
+
+const [user,setuser]=useState()
+const UsercontextProvider=({children})=>{
+   <usercontext.provider value ={user,setUser}>
+   {children}
+   </usercontext.provider>
+
+}
+
+3) usecontext hooks to set and store the context
+
+import usecontext and usercontext
+
+const {setUser}= usecontext(Usercontext)
+setuser({name,pass})
+
+const {user} = useContext(userContext)
+console.lof(user.name)
+
+
+**Local storage**
+local storgae  use to store data locally act as a databse that persist its value on reload 
+
+<!-- set item -->
+localStorage.setItem("key","value")
+
+<!-- getitem -->
+localStorage.getItem("key");
+
+
+ 
 
 
 
